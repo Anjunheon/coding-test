@@ -46,11 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/12981_SummerWinter(~2018)_영어 끝말잇기.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/49993_SummerWinter(~2018)_스킬트리.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -76,6 +85,7 @@
         <option value="$PROJECT_DIR$/12987_SummerWinter(~2018)_숫자게임.py" />
         <option value="$PROJECT_DIR$/67256_2020 카카오 인턴십_키패드 누르기.py" />
         <option value="$PROJECT_DIR$/12981_SummerWinter(~2018)_영어 끝말잇기.py" />
+        <option value="$PROJECT_DIR$/49993_SummerWinter(~2018)_스킬트리.py" />
       </list>
     </option>
   </component>
@@ -193,6 +203,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/49993_SummerWinter(~2018)_스킬트리.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
