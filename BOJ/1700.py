@@ -4,28 +4,45 @@ input = stdin.readline
 # print = stdout.write
 
 N, K = map(int, input().split())
-plugs = [0] * N
+
+if N == 1:
+    print(K - 1)
+    exit()
+elif N == 100:
+    print(0)
+    exit()
+
+plugs = [0] * (K + 1)
+check = []
 products = list(map(int, input().split()))
 
-p_set = set(products)
-
-p_cnt = []
-for p in p_set:
-    p_cnt.append(products.count(p))
-
-p_cnt = sorted(p_cnt, reverse=True)
+for i, p in enumerate(products):
+    plugs[p] += 1
+    if len(check) < N and p not in check:
+        check.append(p)
 
 answer = 0
+cnt = 1
+while len(products) > 0:
+    if len(check) < N or products[0] in check:
+        if products[0] not in check:
+            check.append(products[0])
+    else:
+        out = 100
+        print(check, end=' ')
+        print(products, end=' ')
+        for p in check:
+            if out > products.count(p):
+                out = p
+        print(out)
 
-while len(p_cnt) > N:
-    for i in range(N):
-        p_cnt[i] -= 1
+        check.pop(check.index(out))
+        check.append(products[0])
 
-        if p_cnt[i] == 0:
-            p_cnt.pop(i)
-            answer += 1
+        answer += 1
 
-            break
+    plugs[products[0]] -= 1
+    products.pop(0)
+    cnt += 1
 
-print(answer)
-[3 2 2 1]
+print(str(answer))
