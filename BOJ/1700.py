@@ -1,48 +1,40 @@
 from sys import stdin, stdout
 
 input = stdin.readline
-# print = stdout.write
+print = stdout.write
 
 N, K = map(int, input().split())
 
-if N == 1:
-    print(K - 1)
-    exit()
-elif N == 100:
-    print(0)
-    exit()
-
-plugs = [0] * (K + 1)
+multi_tab = []
 check = []
-products = list(map(int, input().split()))
-
-for i, p in enumerate(products):
-    plugs[p] += 1
-    if len(check) < N and p not in check:
-        check.append(p)
+queue = list(map(int, input().split()))
 
 answer = 0
-cnt = 1
-while len(products) > 0:
-    if len(check) < N or products[0] in check:
-        if products[0] not in check:
-            check.append(products[0])
+
+while len(queue):
+    p = queue.pop(0)
+
+    if p in multi_tab:
+        continue
+
+    elif len(multi_tab) < N:
+        multi_tab.append(p)
+        continue
+
     else:
-        out = 100
-        print(check, end=' ')
-        print(products, end=' ')
-        for p in check:
-            if out > products.count(p):
-                out = p
-        print(out)
+        Max = -1
+        out = 0
+        for i in multi_tab:
+            if i not in queue:
+                out = i
+                break
+            elif Max < queue.index(i):
+                Max = queue.index(i)
+                out = i
 
-        check.pop(check.index(out))
-        check.append(products[0])
-
+        multi_tab.remove(out)
         answer += 1
 
-    plugs[products[0]] -= 1
-    products.pop(0)
-    cnt += 1
+        multi_tab.append(p)
 
 print(str(answer))
